@@ -3,4 +3,6 @@ include:
   - zsh.conf
 
 zsh:
-  pkg.installed
+  pkg.installed:
+  - require:
+    - sls: users
