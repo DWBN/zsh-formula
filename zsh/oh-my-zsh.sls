@@ -13,17 +13,8 @@ oh_my_zsh_{{ name }}:
       - pkg: zsh
     - depth: 1
     - force_checkout: true
-  file.directory:
-    - name: {{ home }}/.oh-my-zsh
-    - dir_mode: 755
-    - file_mode: 755
+    - force_clone: true
     - user: {{ name }}
-    - group: {{ name }}
-    - recurse:
-      - mode
-      - user
-      - group
-    - require:
-      - git: oh_my_zsh_{{ name }}
+
 
 {% endfor %}
