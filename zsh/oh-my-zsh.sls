@@ -5,16 +5,14 @@
 {%- set home = user.get('home', "/home/%s" % name) %}
 
 oh_my_zsh_{{ name }}:
-  cmd.run:
-    - name: /usr/bin/git stash
-    - cwd: {{ home }}/.oh-my-zsh
-    - onlyif: test -d {{ home }}/.oh-my-zsh
   git.latest:
     - name: git://github.com/robbyrussell/oh-my-zsh.git
     - rev: master
     - target: {{ home }}/.oh-my-zsh
     - require:
       - pkg: zsh
+    - depth: 1
+    - force_checkout: true
   file.directory:
     - name: {{ home }}/.oh-my-zsh
     - dir_mode: 755
