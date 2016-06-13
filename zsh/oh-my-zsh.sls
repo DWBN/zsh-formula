@@ -14,6 +14,7 @@ oh_my_zsh_{{ name }}:
     - depth: 1
     - force_checkout: true
     - force_clone: true
+    - force_fetch: true
     - user: {{ name }}
 
 
