@@ -11,10 +11,7 @@ oh_my_zsh_{{ name }}:
     - target: {{ home }}/.oh-my-zsh
     - require:
       - pkg: zsh
-    - depth: 1
-    - force_checkout: true
     - force_clone: true
-    - force_fetch: true
     - user: {{ name }}
 
 
