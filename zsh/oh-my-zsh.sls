@@ -13,6 +13,8 @@ oh_my_zsh_{{ name }}:
       - pkg: zsh
     - force_clone: true
     - user: {{ name }}
+    - unless: cd {{ home }}/.oh-my-zsh && git stash
+
 
 
 {% endfor %}
